@@ -97,15 +97,15 @@ function logIt() {
     ts="[$(date +"%Y-%m-%d %T")]:"
     case $header in
         'ERROR')
-                        echo -e "$ts ${line/$header/[$RED $header $NC]}";;
+            echo -e "$ts ${line/$header/[$RED $header $NC]}";;
         'PASS')
-                        echo -e "$ts ${line/$header/[$GREEN $header $NC]}";;
+            echo -e "$ts ${line/$header/[$GREEN $header $NC]}";;
         'WARN')
-                        echo -e "$ts ${line/$header/[$YELLOW $header $NC]}";;
+            echo -e "$ts ${line/$header/[$YELLOW $header $NC]}";;
         'INFO')
-                        echo -e "$ts ${line/$header/[$NC $header $NC]}";;
+            echo -e "$ts ${line/$header/[$NC $header $NC]}";;
         *)
-                        echo -e "$ts $line";;
+            echo -e "$ts $line";;
     esac
     echo -e "$ts "$line"" >> "$log_file"
     IFS=$OIFS
